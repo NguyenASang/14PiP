@@ -26,7 +26,7 @@
         [self.returnToFullscreenButton addTarget:controlsViewController action:@selector(_stopButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 
         self.leftSeekButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.leftSeekButton setImage:[UIImage imageWithContentsOfFile:[bundle pathForResource:@"gobackward.15" ofType:@"png"]] forState:UIControlStateNormal];
+        [self.leftSeekButton setImage:[UIImage imageWithContentsOfFile:[bundle pathForResource:@"gobackward.5" ofType:@"png"]] forState:UIControlStateNormal];
         self.leftSeekButton.alpha = 0.95;
         self.leftSeekButton.translatesAutoresizingMaskIntoConstraints = NO;
         [self.leftSeekButton addTarget:self action:@selector(goBack15:) forControlEvents:UIControlEventTouchUpInside];
@@ -44,7 +44,7 @@
         [self.playPauseButton addTarget:controlsViewController action:@selector(_actionButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 
         self.rightSeekButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.rightSeekButton setImage:[UIImage imageWithContentsOfFile:[bundle pathForResource:@"goforward.15" ofType:@"png"]] forState:UIControlStateNormal];
+        [self.rightSeekButton setImage:[UIImage imageWithContentsOfFile:[bundle pathForResource:@"goforward.5" ofType:@"png"]] forState:UIControlStateNormal];
         self.rightSeekButton.alpha = 0.95;
         self.rightSeekButton.translatesAutoresizingMaskIntoConstraints = NO;
         [self.rightSeekButton addTarget:self action:@selector(goForward15:) forControlEvents:UIControlEventTouchUpInside];
@@ -156,7 +156,7 @@
         PGPlaybackProgressIndicator *progressIndicator = [self.controlsViewController valueForKey:@"_playbackProgressIndicator"];
         CGFloat progressPercentage = [[progressIndicator valueForKey:@"_currentProgress"] floatValue];
         CGFloat currentVideoTime = duration * progressPercentage;
-        MRMediaRemoteSetElapsedTime(currentVideoTime - 15);
+        MRMediaRemoteSetElapsedTime(currentVideoTime - 5);
     });
 }
 
@@ -167,7 +167,7 @@
         PGPlaybackProgressIndicator *progressIndicator = [self.controlsViewController valueForKey:@"_playbackProgressIndicator"];
         CGFloat progressPercentage = [[progressIndicator valueForKey:@"_currentProgress"] floatValue];
         CGFloat currentVideoTime = duration * progressPercentage;
-        MRMediaRemoteSetElapsedTime(currentVideoTime + 15);
+        MRMediaRemoteSetElapsedTime(currentVideoTime + 5);
     });
 }
 
